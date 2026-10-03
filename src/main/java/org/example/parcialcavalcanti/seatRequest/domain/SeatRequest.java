@@ -12,5 +12,16 @@ import java.time.ZonedDateTime;
 @Setter
 @NoArgsConstructor
 public class SeatRequest {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @OneToOne
+    private Long tripId;
 
+    private Long passengerId;
+
+    private ZonedDateTime requestedAt;
+
+    @Enumerated(EnumType.STRING)
+    private StatusSeat status;
 }
